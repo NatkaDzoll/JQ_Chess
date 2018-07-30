@@ -1,9 +1,11 @@
 
 /*
+------------------------------------------------------------------------
 Вариант 1 - через индексы елементов таблицы td
-
 ------------------------------------------------------------------------
 */
+
+
 /*
 var td = $("td");
 console.log(td);
@@ -21,6 +23,8 @@ td.filter(function(i) {
 })
 
 */
+
+
 /*
 ------------------------------------------------------------------------
 Вариант 2 - через индексы елементов таблицы tr(i) и td(j) 
@@ -81,7 +85,7 @@ $('table')
 
 // console.log( $('table').find('tr').not(':first-child').not(':last-child').css('backgroundColor','black'))
 
-console.log($('table').find('tr:nth-child(even) td:odd'));
+/*console.log($('table').find('tr:nth-child(even) td:odd'));*/
 
 $('table')
 	.find('tr') // ищем елементы строк
@@ -97,51 +101,25 @@ $('table')
 			'height': '20px'	})
 	.end()
 
-//удаляем из набора сделанные элементы
-	
-	/*.find('tr:nth-child(even) td:odd') //четная строка таблицы, нечетные столбцы
+	/*	БОЛЬШОЕ РЕШЕНИЕ
+--------------------------------------------------------------------------------
+	.find('tr:nth-child(even) td:odd') //четная строка таблицы, нечетные столбцы
 	.not('tr:last-child, td:gt(18)') // исключаем последнюю строку и после 15 элемента
 	.css('backgroundColor','black')
 	.end()
 	.end()
 	.find('tr:nth-child(odd) td:even')
 	.not('tr:first-child, td:lt(4)')
-	.css('backgroundColor','black')*/
+	.css('backgroundColor','black')
+--------------------------------------------------------------------------------
+	*/
 	
 	.find(':nth-child(even) td:odd, tr:nth-child(odd) td:even')// ?????  Почему в первом случае не надо ставить tr а во втором надо???
-	.not(':gt(44), :Lt(5), :last-child, :first-child')
+	.not(':gt(44), :Lt(5), :last-child, :first-child') //удаляем из набора сделанные элементы
 	.css('backgroundColor','black')
 
-
-
-
-/*	.not(':first-child')
-	.not(':last-child')*/
 
 /*	.find('tr:not(:first:last) td:gt(1)')
 	.css('backgroundColor','black')
 	.end()
 */
-	/*.find('tr:first-child')
-	.css('backgroundColor','black')*/
-
-/*	
-	.find('td')
-	.parent()
-	.not('tr:first, tr:last')
-	.end()
-
-	.css('backgroundColor','black')
-	.end()
-	
-	.find('tr:even')
-	.find('td:odd')
-	.css('backgroundColor','black')
-	.end()
-	
-	console.log($('table').find('tr'))
-	console.log($('table').find('tr').not('tr:first'))*/
-
-/*	
-console.log( $('table').find('tr').not(':first, :last').find('td').not(':first-child, :last-child').parent().css('backgroundColor','black') )*/
-	
